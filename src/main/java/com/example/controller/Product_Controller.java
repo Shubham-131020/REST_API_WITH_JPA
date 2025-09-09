@@ -31,7 +31,7 @@ public class Product_Controller {
         Product product = service.registerProduct(pro);
         return product;
     }
-    @PutMapping("/update/{id}/{name}")
+   /* @PutMapping("/update/{id}/{name}")
     public Product upDateById(@PathVariable("id") int id,@PathVariable("name") String name)
     {
         Product product = service.fetchById(id);
@@ -39,7 +39,7 @@ public class Product_Controller {
             product.setProd_Name(name);
 
         return service.UpdateProd(product);
-    }
+    }*/
 @DeleteMapping("/delete/{id}")
     public Product DeletById(@PathVariable("id")Integer id)
 {

@@ -1,5 +1,6 @@
 package com.example.service;
 
+import com.example.customException.ProductNotFoundException;
 import com.example.entity.Product;
 import com.example.repo.IProduct_Repo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,7 +58,7 @@ public class ImplProduct_Service  implements IProduct_service{
     public Product fetchById(Integer id) {
         System.out.println("from db");
 //        Optional<Product> byId = repo.findById(id);
-        Product product1 = repo.findById(id).orElse(null);
+        Product product1 = repo.findById(id).orElseThrow(() -> new ProductNotFoundException("product not found"));
 //        Product product = byId.get();
 return product1;
    }
